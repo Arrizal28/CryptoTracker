@@ -2,6 +2,8 @@ package com.ac.cryptotracker.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
+val greenBackground = Color(0xFF119B00)
+
 val primaryLight = Color(0xFF3A608F)
 val onPrimaryLight = Color(0xFFFFFFFF)
 val primaryContainerLight = Color(0xFFD3E3FF)

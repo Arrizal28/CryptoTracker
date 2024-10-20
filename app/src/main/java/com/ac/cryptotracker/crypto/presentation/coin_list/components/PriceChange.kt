@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowDown
+import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -28,20 +29,19 @@ fun PriceChange(
     change: DisplayableNumber,
     modifier: Modifier = Modifier
 ) {
-    val contentColor = if (change.value < 0.0) {
+    val contentColor = if(change.value < 0.0) {
         MaterialTheme.colorScheme.onErrorContainer
     } else {
         Color.Green
     }
-
-    val backgroundColor = if (change.value < 0.0) {
-        MaterialTheme.colorScheme.onErrorContainer
+    val backgroundColor = if(change.value < 0.0) {
+        MaterialTheme.colorScheme.errorContainer
     } else {
         greenBackground
     }
 
     Row(
-        modifier = Modifier
+        modifier = modifier
             .clip(RoundedCornerShape(100f))
             .background(backgroundColor)
             .padding(horizontal = 4.dp),
@@ -51,11 +51,11 @@ fun PriceChange(
             imageVector = if(change.value < 0.0) {
                 Icons.Default.KeyboardArrowDown
             } else {
-                Icons.Default.KeyboardArrowDown
+                Icons.Default.KeyboardArrowUp
             },
             contentDescription = null,
-            tint = contentColor,
-            modifier = Modifier.size(20.dp)
+            modifier = Modifier.size(20.dp),
+            tint = contentColor
         )
         Text(
             text = "${change.formatted} %",

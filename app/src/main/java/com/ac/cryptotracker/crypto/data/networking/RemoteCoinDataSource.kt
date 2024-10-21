@@ -6,6 +6,7 @@ import com.ac.cryptotracker.core.domain.util.NetworkError
 import com.ac.cryptotracker.core.domain.util.Result
 import com.ac.cryptotracker.core.domain.util.map
 import com.ac.cryptotracker.crypto.data.mappers.toCoin
+import com.ac.cryptotracker.crypto.data.mappers.toCoinPrice
 import com.ac.cryptotracker.crypto.data.networking.dto.CoinHistoryDto
 import com.ac.cryptotracker.crypto.data.networking.dto.CoinsResponseDto
 import com.ac.cryptotracker.crypto.domain.Coin
